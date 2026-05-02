@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,6 +17,29 @@
       justify-content: center;
       min-height: 100vh;
       padding: 24px;
+    }
+    .lang-toggle {
+      position: fixed;
+      top: 16px;
+      right: 16px;
+      display: flex;
+      border: 1px solid #d2d2d7;
+      border-radius: 8px;
+      overflow: hidden;
+      background: #fff;
+    }
+    .lang-toggle button {
+      padding: 6px 14px;
+      border: none;
+      background: transparent;
+      font-size: 0.85rem;
+      cursor: pointer;
+      color: #6e6e73;
+      transition: background 0.15s, color 0.15s;
+    }
+    .lang-toggle button.active {
+      background: #1d1d1f;
+      color: #fff;
     }
     .logo { font-size: 2rem; font-weight: 700; margin-bottom: 8px; }
     .sub { color: #6e6e73; font-size: 0.95rem; margin-bottom: 48px; }
@@ -38,17 +61,36 @@
   </style>
 </head>
 <body>
+  <div class="lang-toggle">
+    <button id="btn-en" class="active" onclick="setLang('en')">EN</button>
+    <button id="btn-ja" onclick="setLang('ja')">JA</button>
+  </div>
+
   <div class="logo">Polyglo</div>
   <div class="sub">Language Learning App</div>
   <div class="cards">
     <a href="terms.html" class="card">
       <div class="card-icon">📄</div>
-      <div class="card-title">利用規約</div>
+      <div class="card-title" data-en="Terms of Service" data-ja="利用規約">Terms of Service</div>
     </a>
     <a href="privacy.html" class="card">
       <div class="card-icon">🔒</div>
-      <div class="card-title">プライバシーポリシー</div>
+      <div class="card-title" data-en="Privacy Policy" data-ja="プライバシーポリシー">Privacy Policy</div>
     </a>
   </div>
+
+  <script>
+    function setLang(lang) {
+      localStorage.setItem('polyglo-lang', lang);
+      document.documentElement.lang = lang;
+      document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+      document.getElementById('btn-ja').classList.toggle('active', lang === 'ja');
+      document.querySelectorAll('[data-en]').forEach(el => {
+        el.textContent = el.dataset[lang];
+      });
+    }
+    const saved = localStorage.getItem('polyglo-lang') || 'en';
+    setLang(saved);
+  </script>
 </body>
 </html>

@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>プライバシーポリシー - Polyglo</title>
+  <title>Privacy Policy - Polyglo</title>
   <link rel="icon" type="image/png" href="favicon.png">
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -62,65 +62,171 @@
       color: #3a3a3c;
     }
     th { background: #f5f5f7; font-weight: 600; }
+    .lang-toggle {
+      position: fixed;
+      top: 16px;
+      right: 16px;
+      display: flex;
+      border: 1px solid #d2d2d7;
+      border-radius: 8px;
+      overflow: hidden;
+      background: #fff;
+    }
+    .lang-toggle button {
+      padding: 6px 14px;
+      border: none;
+      background: transparent;
+      font-size: 0.85rem;
+      cursor: pointer;
+      color: #6e6e73;
+      transition: background 0.15s, color 0.15s;
+    }
+    .lang-toggle button.active {
+      background: #1d1d1f;
+      color: #fff;
+    }
+    .lang-en, .lang-ja { display: none; }
+    .lang-en.active, .lang-ja.active { display: block; }
   </style>
 </head>
 <body>
+  <div class="lang-toggle">
+    <button id="btn-en" onclick="setLang('en')">EN</button>
+    <button id="btn-ja" onclick="setLang('ja')">JA</button>
+  </div>
+
   <div class="container">
-    <a href="index.html" class="back">← 戻る</a>
-    <h1>プライバシーポリシー</h1>
-    <div class="updated">最終更新日：2026年5月2日</div>
+    <a href="index.html" class="back">←&nbsp;<span data-en="Back" data-ja="戻る">Back</span></a>
 
-    <div class="card">
-      <h2>1. はじめに</h2>
-      <p>Polyglo（以下「当アプリ」）は、利用者のプライバシーを尊重します。本プライバシーポリシーでは、当アプリが収集する情報とその取り扱いについて説明します。</p>
+    <!-- English -->
+    <div class="lang-en" id="content-en">
+      <h1>Privacy Policy</h1>
+      <div class="updated">Last updated: May 2, 2026</div>
+      <div class="card">
+        <h2>1. Introduction</h2>
+        <p>Polyglo ("the App") respects your privacy. This Privacy Policy explains what information the App collects and how it is handled.</p>
 
-      <h2>2. 収集する情報</h2>
-      <p>当アプリは以下の情報を収集する場合があります。</p>
-      <table>
-        <tr><th>情報の種類</th><th>具体例</th><th>目的</th></tr>
-        <tr><td>利用状況データ</td><td>学習進捗・完了レッスン数・アプリ内行動</td><td>学習体験の改善</td></tr>
-        <tr><td>端末情報</td><td>OSバージョン・端末モデル・言語設定</td><td>動作最適化・不具合対応</td></tr>
-        <tr><td>購入情報</td><td>購入済みプランの種類（カード情報は収集しません）</td><td>プレミアム機能の提供</td></tr>
-        <tr><td>クラッシュレポート</td><td>エラーログ・スタックトレース</td><td>バグ修正・品質向上</td></tr>
-      </table>
-      <p>当アプリはアカウント登録を必要とせず、氏名・メールアドレス等の個人を直接特定できる情報は収集しません。</p>
+        <h2>2. Information We Collect</h2>
+        <p>The App may collect the following information:</p>
+        <table>
+          <tr><th>Type</th><th>Examples</th><th>Purpose</th></tr>
+          <tr><td>Usage Data</td><td>Learning progress, completed lessons, in-app behavior</td><td>Improve the learning experience</td></tr>
+          <tr><td>Device Information</td><td>OS version, device model, language settings</td><td>Performance optimization & troubleshooting</td></tr>
+          <tr><td>Purchase Information</td><td>Type of plan purchased (no payment card data collected)</td><td>Provide premium features</td></tr>
+          <tr><td>Crash Reports</td><td>Error logs, stack traces</td><td>Bug fixes & quality improvement</td></tr>
+        </table>
+        <p>The App does not require account registration and does not collect personally identifiable information such as names or email addresses.</p>
 
-      <h2>3. 情報の利用目的</h2>
-      <ul>
-        <li>アプリの機能提供・維持・改善</li>
-        <li>クラッシュ・不具合の検出と修正</li>
-        <li>アプリ内課金の管理</li>
-        <li>利用統計の分析（匿名化された集計データ）</li>
-      </ul>
+        <h2>3. How We Use Information</h2>
+        <ul>
+          <li>To provide, maintain, and improve app features</li>
+          <li>To detect and fix crashes and bugs</li>
+          <li>To manage in-app purchases</li>
+          <li>To analyze usage statistics (anonymized aggregate data)</li>
+        </ul>
 
-      <h2>4. 第三者への提供</h2>
-      <p>当アプリは、以下の場合を除き、収集した情報を第三者に提供・販売しません。</p>
-      <ul>
-        <li>サービス運営に必要な業務委託先（例：クラッシュ分析ツール）への提供</li>
-        <li>法令に基づく開示が必要な場合</li>
-      </ul>
-      <p>利用する可能性のある主なサードパーティサービス：</p>
-      <ul>
-        <li><strong>Firebase（Google LLC）</strong> — クラッシュレポート・分析</li>
-        <li><strong>Apple App Store / Google Play</strong> — 課金処理</li>
-      </ul>
-      <p>各サービスのプライバシーポリシーについては、各社のウェブサイトをご参照ください。</p>
+        <h2>4. Third-Party Disclosure</h2>
+        <p>Except as described below, we do not sell or share collected information with third parties.</p>
+        <ul>
+          <li>Service providers necessary for operations (e.g., crash analytics tools)</li>
+          <li>When legally required to disclose</li>
+        </ul>
+        <p>Major third-party services we may use:</p>
+        <ul>
+          <li><strong>Google AdMob (Google LLC)</strong> — In-app advertising</li>
+          <li><strong>Apple App Store / Google Play</strong> — Payment processing</li>
+        </ul>
+        <p>Please refer to each provider's website for their respective privacy policies.</p>
 
-      <h2>5. データの保存と保護</h2>
-      <p>収集したデータは適切なセキュリティ対策を施した環境で保管します。学習進捗データは主に端末内に保存されます。</p>
+        <h2>5. Data Storage and Protection</h2>
+        <p>Collected data is stored in environments with appropriate security measures. Learning progress data is primarily stored on-device.</p>
 
-      <h2>6. お子様のプライバシー</h2>
-      <p>当アプリは13歳未満の児童から意図的に個人情報を収集しません。13歳未満のお子様は、保護者の同意のもとでご利用ください。</p>
+        <h2>6. Children's Privacy</h2>
+        <p>The App does not intentionally collect personal information from children under 13. Children under 13 should use the App with parental consent.</p>
 
-      <h2>7. ポリシーの変更</h2>
-      <p>本ポリシーは必要に応じて更新されます。重要な変更がある場合は、アプリ内または本ページにてお知らせします。</p>
+        <h2>7. Changes to This Policy</h2>
+        <p>This policy may be updated as needed. If significant changes are made, we will notify users within the app or on this page.</p>
 
-      <h2>8. お問い合わせ</h2>
-      <div class="contact">
-        プライバシーに関するご質問・ご要望は下記までご連絡ください。<br>
-        <strong>メール：</strong><a href="mailto:polygloapp@gmail.com">polygloapp@gmail.com</a>
+        <h2>8. Contact Us</h2>
+        <div class="contact">
+          For privacy-related questions or requests, please contact us at:<br>
+          <strong>Email: </strong><a href="mailto:polygloapp@gmail.com">polygloapp@gmail.com</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Japanese -->
+    <div class="lang-ja" id="content-ja">
+      <h1>プライバシーポリシー</h1>
+      <div class="updated">最終更新日：2026年5月2日</div>
+      <div class="card">
+        <h2>1. はじめに</h2>
+        <p>Polyglo（以下「当アプリ」）は、利用者のプライバシーを尊重します。本プライバシーポリシーでは、当アプリが収集する情報とその取り扱いについて説明します。</p>
+
+        <h2>2. 収集する情報</h2>
+        <p>当アプリは以下の情報を収集する場合があります。</p>
+        <table>
+          <tr><th>情報の種類</th><th>具体例</th><th>目的</th></tr>
+          <tr><td>利用状況データ</td><td>学習進捗・完了レッスン数・アプリ内行動</td><td>学習体験の改善</td></tr>
+          <tr><td>端末情報</td><td>OSバージョン・端末モデル・言語設定</td><td>動作最適化・不具合対応</td></tr>
+          <tr><td>購入情報</td><td>購入済みプランの種類（カード情報は収集しません）</td><td>プレミアム機能の提供</td></tr>
+          <tr><td>クラッシュレポート</td><td>エラーログ・スタックトレース</td><td>バグ修正・品質向上</td></tr>
+        </table>
+        <p>当アプリはアカウント登録を必要とせず、氏名・メールアドレス等の個人を直接特定できる情報は収集しません。</p>
+
+        <h2>3. 情報の利用目的</h2>
+        <ul>
+          <li>アプリの機能提供・維持・改善</li>
+          <li>クラッシュ・不具合の検出と修正</li>
+          <li>アプリ内課金の管理</li>
+          <li>利用統計の分析（匿名化された集計データ）</li>
+        </ul>
+
+        <h2>4. 第三者への提供</h2>
+        <p>当アプリは、以下の場合を除き、収集した情報を第三者に提供・販売しません。</p>
+        <ul>
+          <li>サービス運営に必要な業務委託先（例：クラッシュ分析ツール）への提供</li>
+          <li>法令に基づく開示が必要な場合</li>
+        </ul>
+        <p>利用する可能性のある主なサードパーティサービス：</p>
+        <ul>
+          <li><strong>Google AdMob（Google LLC）</strong> — アプリ内広告</li>
+          <li><strong>Apple App Store / Google Play</strong> — 課金処理</li>
+        </ul>
+        <p>各サービスのプライバシーポリシーについては、各社のウェブサイトをご参照ください。</p>
+
+        <h2>5. データの保存と保護</h2>
+        <p>収集したデータは適切なセキュリティ対策を施した環境で保管します。学習進捗データは主に端末内に保存されます。</p>
+
+        <h2>6. お子様のプライバシー</h2>
+        <p>当アプリは13歳未満の児童から意図的に個人情報を収集しません。13歳未満のお子様は、保護者の同意のもとでご利用ください。</p>
+
+        <h2>7. ポリシーの変更</h2>
+        <p>本ポリシーは必要に応じて更新されます。重要な変更がある場合は、アプリ内または本ページにてお知らせします。</p>
+
+        <h2>8. お問い合わせ</h2>
+        <div class="contact">
+          プライバシーに関するご質問・ご要望は下記までご連絡ください。<br>
+          <strong>メール：</strong><a href="mailto:polygloapp@gmail.com">polygloapp@gmail.com</a>
+        </div>
       </div>
     </div>
   </div>
+
+  <script>
+    function setLang(lang) {
+      localStorage.setItem('polyglo-lang', lang);
+      document.documentElement.lang = lang;
+      document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+      document.getElementById('btn-ja').classList.toggle('active', lang === 'ja');
+      document.getElementById('content-en').classList.toggle('active', lang === 'en');
+      document.getElementById('content-ja').classList.toggle('active', lang === 'ja');
+      document.querySelectorAll('[data-en]').forEach(el => {
+        el.textContent = el.dataset[lang];
+      });
+    }
+    const saved = localStorage.getItem('polyglo-lang') || 'en';
+    setLang(saved);
+  </script>
 </body>
 </html>

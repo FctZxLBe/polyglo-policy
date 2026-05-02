@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>利用規約 - Polyglo</title>
+  <title>Terms of Service - Polyglo</title>
   <link rel="icon" type="image/png" href="favicon.png">
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -49,61 +49,163 @@
       font-size: 0.9rem;
       color: #3a3a3c;
     }
+    .lang-toggle {
+      position: fixed;
+      top: 16px;
+      right: 16px;
+      display: flex;
+      border: 1px solid #d2d2d7;
+      border-radius: 8px;
+      overflow: hidden;
+      background: #fff;
+    }
+    .lang-toggle button {
+      padding: 6px 14px;
+      border: none;
+      background: transparent;
+      font-size: 0.85rem;
+      cursor: pointer;
+      color: #6e6e73;
+      transition: background 0.15s, color 0.15s;
+    }
+    .lang-toggle button.active {
+      background: #1d1d1f;
+      color: #fff;
+    }
+    .lang-en, .lang-ja { display: none; }
+    .lang-en.active, .lang-ja.active { display: block; }
   </style>
 </head>
 <body>
+  <div class="lang-toggle">
+    <button id="btn-en" onclick="setLang('en')">EN</button>
+    <button id="btn-ja" onclick="setLang('ja')">JA</button>
+  </div>
+
   <div class="container">
-    <a href="index.html" class="back">← 戻る</a>
-    <h1>利用規約</h1>
-    <div class="updated">最終更新日：2026年5月2日</div>
+    <a href="index.html" class="back">←&nbsp;<span data-en="Back" data-ja="戻る">Back</span></a>
 
-    <div class="card">
-      <h2>1. はじめに</h2>
-      <p>本利用規約（以下「本規約」）は、Polyglo（以下「当アプリ」）の利用条件を定めるものです。当アプリをダウンロード・使用することにより、本規約に同意したものとみなします。</p>
+    <!-- English -->
+    <div class="lang-en" id="content-en">
+      <h1>Terms of Service</h1>
+      <div class="updated">Last updated: May 2, 2026</div>
+      <div class="card">
+        <h2>1. Introduction</h2>
+        <p>These Terms of Service ("Terms") govern your use of Polyglo ("the App"). By downloading or using the App, you agree to these Terms.</p>
 
-      <h2>2. サービスの内容</h2>
-      <p>当アプリは、多言語学習を目的としたモバイルアプリケーションです。会話練習、語彙学習などの機能を提供します。</p>
+        <h2>2. Service Description</h2>
+        <p>The App is a mobile application for multilingual learning, providing features such as conversation practice and vocabulary learning.</p>
 
-      <h2>3. アプリ内課金</h2>
-      <p>当アプリは一部有料機能（以下「プレミアム機能」）を提供しています。</p>
-      <ul>
-        <li>購入はApple App Store / Google Play Storeを通じて行われます。</li>
-        <li>購入が完了した後のキャンセル・返金は、各ストアのポリシーに従います。</li>
-        <li>料金は購入時に明示されます。価格は予告なく変更される場合があります。</li>
-        <li>定期購読の場合、解約しない限り自動更新されます。</li>
-      </ul>
+        <h2>3. In-App Purchases</h2>
+        <p>The App offers certain paid features ("Premium Features").</p>
+        <ul>
+          <li>Purchases are made through the Apple App Store or Google Play Store.</li>
+          <li>Cancellations and refunds after purchase are subject to each store's policy.</li>
+          <li>Prices are displayed at the time of purchase and may change without notice.</li>
+          <li>Subscriptions auto-renew unless cancelled.</li>
+        </ul>
 
-      <h2>4. 知的財産権</h2>
-      <p>当アプリ内のコンテンツ（テキスト・音声・画像・デザイン等）に関する著作権その他の知的財産権は、当アプリの開発者またはその許諾者に帰属します。個人的な学習目的以外での複製・転用を禁じます。</p>
+        <h2>4. Intellectual Property</h2>
+        <p>All content within the App (text, audio, images, designs, etc.) is owned by the App developer or its licensors. Reproduction or use beyond personal learning purposes is prohibited.</p>
 
-      <h2>5. 禁止事項</h2>
-      <p>利用者は以下の行為を行ってはなりません。</p>
-      <ul>
-        <li>当アプリのリバースエンジニアリング・改ざん</li>
-        <li>当アプリを通じた違法行為または第三者への迷惑行為</li>
-        <li>当アプリのコンテンツの無断複製・二次配布</li>
-        <li>不正な手段によるプレミアム機能へのアクセス</li>
-      </ul>
+        <h2>5. Prohibited Activities</h2>
+        <p>Users must not engage in the following:</p>
+        <ul>
+          <li>Reverse engineering or modifying the App</li>
+          <li>Illegal activities or harassment of third parties through the App</li>
+          <li>Unauthorized reproduction or redistribution of App content</li>
+          <li>Accessing premium features through unauthorized means</li>
+        </ul>
 
-      <h2>6. 免責事項</h2>
-      <p>当アプリは現状有姿で提供されます。開発者は、アプリの動作・コンテンツの正確性・学習効果について、法令上許容される範囲で一切の保証を行いません。</p>
-      <p>通信障害・端末の不具合・ストアのメンテナンス等により生じた損害について、開発者は責任を負いません。</p>
+        <h2>6. Disclaimer</h2>
+        <p>The App is provided "as is." To the extent permitted by law, the developer makes no warranties regarding the App's operation, accuracy of content, or learning outcomes.</p>
+        <p>The developer is not liable for damages caused by network failures, device issues, or store maintenance.</p>
 
-      <h2>7. サービスの変更・終了</h2>
-      <p>開発者は、事前の通知なく当アプリの機能を変更または終了する場合があります。</p>
+        <h2>7. Changes and Termination</h2>
+        <p>The developer may modify or discontinue App features without prior notice.</p>
 
-      <h2>8. 規約の変更</h2>
-      <p>本規約は必要に応じて改定されます。重要な変更がある場合は、アプリ内または本ページにてお知らせします。改定後も当アプリを使用し続けることで、新しい規約に同意したものとみなします。</p>
+        <h2>8. Changes to Terms</h2>
+        <p>These Terms may be revised as needed. If significant changes are made, users will be notified within the app or on this page. Continued use of the App after revisions constitutes acceptance of the new Terms.</p>
 
-      <h2>9. 準拠法・管轄</h2>
-      <p>本規約は日本法に準拠し、東京地方裁判所を専属的合意管轄とします。</p>
+        <h2>9. Governing Law</h2>
+        <p>These Terms are governed by the laws of Japan, with the Tokyo District Court as the exclusive jurisdiction.</p>
 
-      <h2>10. お問い合わせ</h2>
-      <div class="contact">
-        本規約に関するご質問は下記までご連絡ください。<br>
-        <strong>メール：</strong><a href="mailto:polygloapp@gmail.com">polygloapp@gmail.com</a>
+        <h2>10. Contact Us</h2>
+        <div class="contact">
+          For questions about these Terms, please contact us at:<br>
+          <strong>Email: </strong><a href="mailto:polygloapp@gmail.com">polygloapp@gmail.com</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Japanese -->
+    <div class="lang-ja" id="content-ja">
+      <h1>利用規約</h1>
+      <div class="updated">最終更新日：2026年5月2日</div>
+      <div class="card">
+        <h2>1. はじめに</h2>
+        <p>本利用規約（以下「本規約」）は、Polyglo（以下「当アプリ」）の利用条件を定めるものです。当アプリをダウンロード・使用することにより、本規約に同意したものとみなします。</p>
+
+        <h2>2. サービスの内容</h2>
+        <p>当アプリは、多言語学習を目的としたモバイルアプリケーションです。会話練習、語彙学習などの機能を提供します。</p>
+
+        <h2>3. アプリ内課金</h2>
+        <p>当アプリは一部有料機能（以下「プレミアム機能」）を提供しています。</p>
+        <ul>
+          <li>購入はApple App Store / Google Play Storeを通じて行われます。</li>
+          <li>購入が完了した後のキャンセル・返金は、各ストアのポリシーに従います。</li>
+          <li>料金は購入時に明示されます。価格は予告なく変更される場合があります。</li>
+          <li>定期購読の場合、解約しない限り自動更新されます。</li>
+        </ul>
+
+        <h2>4. 知的財産権</h2>
+        <p>当アプリ内のコンテンツ（テキスト・音声・画像・デザイン等）に関する著作権その他の知的財産権は、当アプリの開発者またはその許諾者に帰属します。個人的な学習目的以外での複製・転用を禁じます。</p>
+
+        <h2>5. 禁止事項</h2>
+        <p>利用者は以下の行為を行ってはなりません。</p>
+        <ul>
+          <li>当アプリのリバースエンジニアリング・改ざん</li>
+          <li>当アプリを通じた違法行為または第三者への迷惑行為</li>
+          <li>当アプリのコンテンツの無断複製・二次配布</li>
+          <li>不正な手段によるプレミアム機能へのアクセス</li>
+        </ul>
+
+        <h2>6. 免責事項</h2>
+        <p>当アプリは現状有姿で提供されます。開発者は、アプリの動作・コンテンツの正確性・学習効果について、法令上許容される範囲で一切の保証を行いません。</p>
+        <p>通信障害・端末の不具合・ストアのメンテナンス等により生じた損害について、開発者は責任を負いません。</p>
+
+        <h2>7. サービスの変更・終了</h2>
+        <p>開発者は、事前の通知なく当アプリの機能を変更または終了する場合があります。</p>
+
+        <h2>8. 規約の変更</h2>
+        <p>本規約は必要に応じて改定されます。重要な変更がある場合は、アプリ内または本ページにてお知らせします。改定後も当アプリを使用し続けることで、新しい規約に同意したものとみなします。</p>
+
+        <h2>9. 準拠法・管轄</h2>
+        <p>本規約は日本法に準拠し、東京地方裁判所を専属的合意管轄とします。</p>
+
+        <h2>10. お問い合わせ</h2>
+        <div class="contact">
+          本規約に関するご質問は下記までご連絡ください。<br>
+          <strong>メール：</strong><a href="mailto:polygloapp@gmail.com">polygloapp@gmail.com</a>
+        </div>
       </div>
     </div>
   </div>
+
+  <script>
+    function setLang(lang) {
+      localStorage.setItem('polyglo-lang', lang);
+      document.documentElement.lang = lang;
+      document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+      document.getElementById('btn-ja').classList.toggle('active', lang === 'ja');
+      document.getElementById('content-en').classList.toggle('active', lang === 'en');
+      document.getElementById('content-ja').classList.toggle('active', lang === 'ja');
+      document.querySelectorAll('[data-en]').forEach(el => {
+        el.textContent = el.dataset[lang];
+      });
+    }
+    const saved = localStorage.getItem('polyglo-lang') || 'en';
+    setLang(saved);
+  </script>
 </body>
 </html>
